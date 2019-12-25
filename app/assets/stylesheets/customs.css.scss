@@ -1,6 +1,10 @@
 @import "semantic-ui";
 
-
+body{
+  background-image: asset-url('bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 #users-online__card{
   display: flex;
 
