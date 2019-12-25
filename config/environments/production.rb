@@ -90,7 +90,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.action_cable.allowed_request_origins = ['https://bsuir-me.herokuapp.com/']
   config.action_cable.disable_request_forgery_protection = true
-  config.action_cable.url = ‘https://bsuir-me.herokuapp.com/cable’
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
   # middleware. The `delay` is used to determine how long to wait after a write
