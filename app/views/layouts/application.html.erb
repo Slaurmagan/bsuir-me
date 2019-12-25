@@ -12,6 +12,7 @@
   </head>
 
   <body>
+
   <%= render 'layouts/navigation' %>
 
     <!-- <div class="ui animated button" tabindex="0">
@@ -33,7 +34,12 @@
       </div>
     </div> -->
     <div class="ui container">
+      <%= render 'layouts/messages'%>
       <%= yield %>
+    </div>
+    <div class="ui container footer">
+
+       <small>Copyright &copy <a href="https://github.com/Slaurmagan/bsuir-me">GitHub</a></small> by <a href="https://github.com/Slaurmagan">Slaurmaganh</a>
     </div>
   </body>
 </html>

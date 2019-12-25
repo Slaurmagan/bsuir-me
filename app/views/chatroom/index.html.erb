@@ -2,46 +2,23 @@
   <i class="circular  inverted orange coffee icon"></i>
   Say something
 </h4>
-<div class="ui two column grid" >
-  <div class="twelve wide column">
+<div class="ui one column grid" >
+  <div class="sixteen wide column">
     <div class="ui card fluid raised chatbox">
-      <div class="content">
-        <div class="ui feed">
-          <% @messages.each do |message| %>
-            <div class="event">
-              <div class="content">
-                <div class="summary">
-                  <em><%= message.user.username %></em>: <%= message.body %>
-                </div>
-              </div>
-            </div>
-          <% end %>
+      <div class="content" id="messages">
+        <div class="ui feed" id="message-container">
+          <%= render @messages %>
         </div>
       </div>
       <div class="extra content">
-        <form class="ui reply form">
+        <%= form_for(@message,html:{class:"ui reply form",role:"form"},url:message_path,remote: true) do |f| %>
           <div class="field">
             <div class="ui fluid icon input">
-              <input type="text" placeholder="Enter a message...">
-              <i class="bordered inverted orange edit icon"></i>
+              <%= f.text_field :body,placeholder:"Enter a message" %>
+              <%= f.button '<i class="bordered inverted orange edit icon"></i>'.html_safe %>
             </div>
           </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <div class="four wide column">
-    <div class="ui fluid raised card chatbox" id="users-online__card">
-      <div class="ui inverted vertical menu center aligned">
-        <a class="active item">
-          Home
-        </a>
-        <a class="item">
-          Messages
-        </a>
-        <a class="item">
-          Friends
-        </a>
+        <% end %>
       </div>
     </div>
   </div>
