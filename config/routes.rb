@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   post '/message' => 'messages#create'
   delete '/logout' => 'sessions#destroy'
-  mount ActionCable.server,at: '/cable'
+  mount ActionCable.server => "/cable"
 end
